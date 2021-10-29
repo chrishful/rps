@@ -1,16 +1,21 @@
 body {
   width: 65%;
   margin: auto;
-  background-color: #EDEDED;
+  background-color: var(--text);
 }
 h1, h2 {
   text-align: center;
+  color: var(--main);
+}
+p{
+  color: var(--main);
+
 }
 section {
-  border: 2px solid #333;
+  border: 2px solid var(--main);
   margin: 1rem 0;
   padding: 1rem;
-  background-color: #FFF;
+  background-color: var(--background);
 }
 main {
   display: grid;
@@ -23,6 +28,12 @@ main section {
   justify-content: center;
   align-items: center;
 }
+:root{
+  --text: #07265C;
+  --background:#414A59 ;
+  --main: #d3dff5;
+}
+
 .images {
   width: 100%;
   display: flex;
@@ -40,7 +51,7 @@ main section {
 section.scoreboard {
   border-style: dashed;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
 }
 @media screen and (max-width: 768px)  {
@@ -51,15 +62,35 @@ section.scoreboard {
   border-bottom: 2px dotted #AAA;
   padding-bottom: 1rem;
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
 }
+.bounce{
+  animation: bounce 2s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(100px);
+ }
+ 25% {
+   transform: translateY(-50px);
+}
+50% {
+  transform: translateY(25px);
+}
+75% {
+ transform: translateY(-15px);
+}
+
+}
+
 .score {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#pscore, #oscore {
+#pscore, #oscore, #tscore {
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;

@@ -50,12 +50,15 @@ function start(player){
     }
     return count;
 }
+
 var comp = 0;
 var user = 0;
+var tie = 0;
 function game(player){
   var i = start(player);
   sessionStorage.setItem("computer", comp);
   sessionStorage.setItem("player", user);
+  sessionStorage.setItem("tied", tie);
   if(i < 0){
     comp++;
     sessionStorage.setItem("computer", comp);
@@ -64,6 +67,12 @@ function game(player){
     user++;
     sessionStorage.setItem("player", user);
   }
+  else{
+    tie++;
+    sessionStorage.setItem("tied", tie);
+  }
+   document.getElementById('tscore').innerHTML = sessionStorage.getItem("tied");
    document.getElementById('pscore').innerHTML = sessionStorage.getItem("player");
    document.getElementById('oscore').innerHTML = sessionStorage.getItem("computer");
 }
+ti

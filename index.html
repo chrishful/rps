@@ -14,14 +14,14 @@
       <section class="pchoice">
         <h2>You choose . . .</h2>
         <div class="images">
-          <img id="r-img" src="svg/rock.svg" alt="hand as rock" onclick="game(0)">
-          <img id="p-img" src="svg/paper.svg" alt="hand as paper" onclick="game(1)">
-          <img id="s-img" src="svg/scissors.svg" alt="hand as scissors" onclick="game(2)">
+          <img id="r-img" class="bounce" src="svg/rock.svg" alt="hand as rock" onclick="game(0)">
+          <img id="p-img" class="bounce" src="svg/paper.svg" alt="hand as paper" onclick="game(1)">
+          <img id="s-img" class="bounce" src="svg/scissors.svg" alt="hand as scissors" onclick="game(2)">
         </div>
       </section>
       <section class="ochoice">
         <h2>Opponent chooses . . .</h2>
-        <img id="o-img" src="svg/mystery.svg" alt="" >
+        <img id="o-img" class="bounce" src="svg/mystery.svg" alt="" >
       </section>
     </main>
     <section class="scoreboard">
@@ -29,6 +29,10 @@
       <div id="play" class="score">
         <p id="pscore">0</p>
         <p class="label">Player</p>
+      </div>
+      <div id="tie" class="score">
+        <p id="tscore">0</p>
+        <p class="label">Tie</p>
       </div>
       <div id="opp" class="score">
         <p id="oscore">0</p>
