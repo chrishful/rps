@@ -1,6 +1,5 @@
 function compChoice(){
 var compchoice = Math.floor(Math.random()*3);
-console.log("function is working");
  if(compchoice == 0){
    document.getElementById('o-img').src ="svg/rock.svg";
    return 0;
@@ -17,23 +16,54 @@ console.log("function is working");
 
 function start(player){
   var computer = compChoice();
+  var count = 0;
       if(player == computer) document.getElementById('result').innerHTML = "It's a tie";
       else { switch (player) {
         case 0:
-        if(computer == 1) document.getElementById('result').innerHTML = "You lose";
-        else document.getElementById('result').innerHTML = "You win!!";
+        if(computer == 1){
+          document.getElementById('result').innerHTML = "You lose";
+          count--; }
+        else {
+          document.getElementById('result').innerHTML = "You win!!";
+          count++; }
           break;
         case 1:
-         if(computer == 2) document.getElementById('result').innerHTML = "You lose";
-         else document.getElementById('result').innerHTML = "You win!!";
-         break;
+         if(computer == 2){
+           document.getElementById('result').innerHTML = "You lose";
+          count--; }
+         else{
+            document.getElementById('result').innerHTML = "You win!!";
+                  count++; }
+                  break;
         case 2:
-         if(computer == 0) document.getElementById('result').innerHTML = "You lose";
-         else document.getElementById('result').innerHTML = "You win!!";
-         break;
+         if(computer == 0){
+           document.getElementById('result').innerHTML = "You lose";
+          count--; }
+         else{
+            document.getElementById('result').innerHTML = "You win!!";
+                  count++; }
+                  break;
         default:
          console.log("there was an error");
          break;
       }
     }
+    return count;
+}
+var comp = 0;
+var user = 0;
+function game(player){
+  var i = start(player);
+  sessionStorage.setItem("computer", comp);
+  sessionStorage.setItem("player", user);
+  if(i < 0){
+    comp++;
+    sessionStorage.setItem("computer", comp);
+}
+  else if (i > 0) {
+    user++;
+    sessionStorage.setItem("player", user);
+  }
+   document.getElementById('pscore').innerHTML = sessionStorage.getItem("player");
+   document.getElementById('oscore').innerHTML = sessionStorage.getItem("computer");
 }
