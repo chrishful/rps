@@ -21,7 +21,6 @@ function bounce(e){
     comp.classList = 'bounce';
   //  player.addEventListener('animationend', removeClass(e, 'bounce'));
   setTimeout(function() { removeClass(e, 'bounce'); }, 1000);
-
 }
 
 function removeClass(e, f){
@@ -32,17 +31,16 @@ function removeClass(e, f){
 }
 
 
-
 function start(player){
 
   var computer = compChoice();
   var count = 0;
 
-      if(player == computer) document.getElementById('result').innerHTML = "It's a tie";
+      if(player === computer) document.getElementById('result').innerHTML = "It's a tie...";
       else { switch (player) {
         case 0:
         if(computer == 1){
-          document.getElementById('result').innerHTML = "You lose";
+          document.getElementById('result').innerHTML = "You lose.";
           count--; }
         else {
           document.getElementById('result').innerHTML = "You win!!";
@@ -50,7 +48,7 @@ function start(player){
           break;
         case 1:
          if(computer == 2){
-           document.getElementById('result').innerHTML = "You lose";
+           document.getElementById('result').innerHTML = "You lose.";
           count--; }
          else{
             document.getElementById('result').innerHTML = "You win!!";
@@ -58,7 +56,7 @@ function start(player){
                   break;
         case 2:
          if(computer == 0){
-           document.getElementById('result').innerHTML = "You lose";
+           document.getElementById('result').innerHTML = "You lose.";
           count--; }
          else{
             document.getElementById('result').innerHTML = "You win!!";
