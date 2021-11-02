@@ -14,9 +14,30 @@ var compchoice = Math.floor(Math.random()*3);
  }
 }
 
+function bounce(e){
+  var comp = document.getElementById('o-img');
+  var player = document.getElementById(e);
+    player.classList = 'bounce';
+    comp.classList = 'bounce';
+  //  player.addEventListener('animationend', removeClass(e, 'bounce'));
+  setTimeout(function() { removeClass(e, 'bounce'); }, 1000);
+
+}
+
+function removeClass(e, f){
+  var g = document.getElementById(e);
+  g.classList.remove(f);
+  var comp = document.getElementById('o-img');
+  comp.classList.remove(f)
+}
+
+
+
 function start(player){
+
   var computer = compChoice();
   var count = 0;
+
       if(player == computer) document.getElementById('result').innerHTML = "It's a tie";
       else { switch (player) {
         case 0:
@@ -48,6 +69,8 @@ function start(player){
          break;
       }
     }
+
+
     return count;
 }
 
@@ -75,4 +98,3 @@ function game(player){
    document.getElementById('pscore').innerHTML = sessionStorage.getItem("player");
    document.getElementById('oscore').innerHTML = sessionStorage.getItem("computer");
 }
-ti

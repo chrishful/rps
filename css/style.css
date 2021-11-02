@@ -65,23 +65,29 @@ section.scoreboard {
   grid-column-end: 4;
 }
 .bounce{
-  animation: bounce 2s;
+  animation: bounce 1s;
 }
+
 
 @keyframes bounce {
-  0% {
-    transform: translateY(100px);
+ 15% {
+    transform: rotate(45deg);
  }
- 25% {
-   transform: translateY(-50px);
+ 30% {
+   transform: rotate(0deg);
 }
-50% {
-  transform: translateY(25px);
+ 45% {
+   transform: rotate(45deg);
+}
+ 60% {
+   transform: rotate(0deg);
 }
 75% {
- transform: translateY(-15px);
+  transform: rotate(45deg);
 }
-
+90% {
+  transform: rotate(0deg);
+}
 }
 
 .score {
@@ -89,6 +95,9 @@ section.scoreboard {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#r-img, #p-img, #s-img{
+/*  transform: rotateY(180deg); */
 }
 #pscore, #oscore, #tscore {
   font-size: 2rem;
